@@ -176,7 +176,9 @@ void loop()
                 // Concatenate the strings
                 String info = "  Humidity: " + String(humidity) + "%" + "  Temperature: " + String(temperature) + " C";
 
-                open_servo_motor();
+                if(temperature >= 30)
+                  open_servo_motor();
+                  
                 display_information_circular(info);
 
                 if (card_detection() || !open_system)
